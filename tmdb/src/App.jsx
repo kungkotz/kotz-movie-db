@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation";
 import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import "./assets/scss/App.scss";
+import PopularMovies from "./pages/PopularMovies";
 
 function App() {
 	return (
@@ -11,7 +12,7 @@ function App() {
 
 			<Routes>
 				<Route path="/" element={<HomePage />} />
-				<Route path="/movies" element={<NotFound />} />
+				<Route path="/popular" element={<PopularMovies />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>
