@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import "./assets/scss/App.scss";
 import PopularMovies from "./pages/PopularMovies";
+import SingleMoviePage from "./pages/SingleMoviePage";
 
 function App() {
 	return (
@@ -12,7 +13,8 @@ function App() {
 
 			<Routes>
 				<Route path="/" element={<HomePage />} />
-				<Route path="/popular" element={<PopularMovies />} />
+				<Route path="/movie/popular" element={<PopularMovies />} />
+				<Route path="/movie/:id" element={<SingleMoviePage />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>
