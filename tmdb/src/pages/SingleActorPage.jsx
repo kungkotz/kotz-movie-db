@@ -1,17 +1,17 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/esm/Container";
-import { getMovieById } from "../services/api";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/button";
+import { getMoviesByActorId } from "../services/api";
 
 const imgLink = "https://image.tmdb.org/t/p/w500";
 
-const SingleMoviePage = () => {
+const SingleActorPage = () => {
 	const { id } = useParams();
-	const { data, isLoading, isError, error } = useQuery(["movie", id], () =>
-		getMovieById(id)
+	const { data, isLoading, isError, error } = useQuery(["actor", id], () =>
+		getMoviesByActorId(id)
 	);
 
 	return (
@@ -34,23 +34,20 @@ const SingleMoviePage = () => {
 					className="d-flex justify-content-center main-container"
 				>
 					<div className="card m-4 text-center">
-						<h1 className="card-header text-dark">{data.title}</h1>
-						<h2>Released: {data.release_date}</h2>
-						<img src={imgLink + data.poster_path} alt="" />
-						<p>{data.overview}</p>
-						{data.credits.cast.map((actor) => (
+						<h1 className="card-header text-dark">{data.name}</h1>
+						<h2>Born {data.birthday}</h2>
+						<img src={imgLink + data.profile_path} alt="" />
+						{data.credits.cast.map((movie) => (
 							<div
-								key={actor.id}
+								key={movie.id}
 								className="d-flex justify-content-center main-container"
 							>
 								<div className="card m-4 text-center">
-									<h1 className="card-header text-dark">{actor.name}</h1>
-									<img src={imgLink + actor.profile_path} alt="" />
-									<Button
-										as={Link}
-										to={`/people/${actor.id}`}
-										variant="primary"
-									>
+									<h1 className="card-header text-dark">
+										{movie.original_title}
+									</h1>
+									<img src={imgLink + movie.poster_path} alt="" />
+									<Button as={Link} to={`/movie/${movie.id}`} variant="primary">
 										Read more
 									</Button>
 								</div>
@@ -63,4 +60,4 @@ const SingleMoviePage = () => {
 	);
 };
 
-export default SingleMoviePage;
+export default SingleActorPage;
