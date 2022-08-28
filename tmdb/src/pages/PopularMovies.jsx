@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { getPopularMovies } from "../services/api";
 import { useQuery } from "react-query";
 import Button from "react-bootstrap/button";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const imgLink = "https://image.tmdb.org/t/p/w500";
 
@@ -15,7 +16,7 @@ const PopularMovies = () => {
 	return (
 		<Container className="py-3">
 			<h1 className="text-center">Popular Movies</h1>
-			{isLoading && <p>Loading Movies...</p>}
+			{isLoading && <LoadingSpinner />}
 			{isError && <p>An error occured: {error.message}</p>}
 			{data &&
 				data.results.map((movie) => (

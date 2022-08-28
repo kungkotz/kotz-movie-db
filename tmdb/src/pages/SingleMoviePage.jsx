@@ -5,6 +5,7 @@ import { getMovieById } from "../services/api";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/button";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const imgLink = "https://image.tmdb.org/t/p/w500";
 
@@ -26,7 +27,7 @@ const SingleMoviePage = () => {
 				"got me some data? ",
 				data
 			)}
-			{isLoading && <p>Loading Movie...</p>}
+			{isLoading && <LoadingSpinner />}
 			{isError && <p>An error occured: {error.message}</p>}
 			{data && (
 				<div
