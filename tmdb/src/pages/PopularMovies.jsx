@@ -24,7 +24,7 @@ const PopularMovies = () => {
 			<CardGroup>
 				{data &&
 					data.results.map((movie) => (
-						<MovieCard data={movie} imgLink={imgLink} />
+						<MovieCard key={movie.id} data={movie} imgLink={imgLink} />
 					))}
 			</CardGroup>
 		</Container>
