@@ -6,6 +6,10 @@ import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/button";
 import LoadingSpinner from "../components/LoadingSpinner";
+import Card from "react-bootstrap/Card";
+import CardGroup from "react-bootstrap/CardGroup";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const imgLink = "https://image.tmdb.org/t/p/w500";
 
@@ -17,48 +21,42 @@ const SingleMoviePage = () => {
 
 	return (
 		<Container className="py-3">
-			{console.log(
-				"isLoading? ",
-				isLoading,
-				"isError? ",
-				isError,
-				"typeof? ",
-				error,
-				"got me some data? ",
-				data
-			)}
 			{isLoading && <LoadingSpinner />}
 			{isError && <p>An error occured: {error.message}</p>}
 			{data && (
-				<div
-					key={data.id}
-					className="d-flex justify-content-center main-container"
-				>
+				<>
 					<div className="card m-4 text-center">
-						<h1 className="card-header text-dark">{data.title}</h1>
+						<h1 className=" text-dark">{data.title}</h1>
 						<h2>Released: {data.release_date}</h2>
 						<img src={imgLink + data.poster_path} alt="" />
 						<p>{data.overview}</p>
+					</div>
+					<h2 className="text-center">Actors</h2>
+					<br></br>
+					<Row xs={1} md={2} className="g-4">
 						{data.credits.cast.map((actor) => (
-							<div
-								key={actor.id}
-								className="d-flex justify-content-center main-container"
-							>
-								<div className="card m-4 text-center">
-									<h1 className="card-header text-dark">{actor.name}</h1>
-									<img src={imgLink + actor.profile_path} alt="" />
+							<Card key={actor.id} style={{ width: "10rem" }}>
+								<Card.Img
+									className="overflow-auto actor-image-overflow  text-center"
+									variant="top"
+									src={imgLink + actor.profile_path}
+								/>
+								<Card.Body>
+									<Card.Title className="overflow-auto movies-overflow text-center">
+										{actor.name}
+									</Card.Title>
 									<Button
 										as={Link}
 										to={`/people/${actor.id}`}
 										variant="primary"
 									>
-										Read more
+										More Info
 									</Button>
-								</div>
-							</div>
+								</Card.Body>
+							</Card>
 						))}
-					</div>
-				</div>
+					</Row>
+				</>
 			)}
 		</Container>
 	);

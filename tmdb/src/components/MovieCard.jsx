@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const MovieCard = ({ data, imgLink }) => {
 	return (
 		<div className="col-lg-2">
-			<Card className="">
+			<Card>
 				<Card.Img variant="top" src={imgLink + data.poster_path} />
 				<Card.Body className="text-center">
 					<Card.Title className="overflow-auto movies-overflow text-center">

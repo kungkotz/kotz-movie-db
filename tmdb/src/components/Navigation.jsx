@@ -21,7 +21,7 @@ const Navigation = () => {
 						<Nav.Link as={NavLink} end to="/toplist">
 							Toplist
 						</Nav.Link>
-						<Nav.Link as={NavLink} end to="/current">
+						<Nav.Link as={NavLink} end to="/movie/latest">
 							In Cinema Now
 						</Nav.Link>
 					</Nav>
