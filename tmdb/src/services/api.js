@@ -41,3 +41,10 @@ export const getLatestMovies = () => {
 		`https://api.themoviedb.org/3/movie/now_playing?api_key=18ddaf108a92b06062a3ff474f6621da&language=en-US`
 	);
 };
+
+// Get latest top rated movies
+export const getTopRatedMovies = () => {
+	return get(
+		`https://api.themoviedb.org/3/movie/top_rated?api_key=18ddaf108a92b06062a3ff474f6621da&language=en-US`
+	);
+};

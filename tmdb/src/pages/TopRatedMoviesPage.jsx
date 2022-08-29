@@ -1,23 +1,22 @@
 import React from "react";
-import { getLatestMovies } from "../services/api";
+import { getTopRatedMovies } from "../services/api";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import CardGroup from "react-bootstrap/CardGroup";
 import Card from "react-bootstrap/Card";
 import LoadingSpinner from "../components/LoadingSpinner";
-import MovieCard from "../components/MovieCard";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/button";
 import { Link } from "react-router-dom";
+import MovieCard from "../components/MovieCard";
 
 const imgLink = "https://image.tmdb.org/t/p/w500";
 
-const LatestMoviesPage = () => {
-	const { id } = useParams();
+const TopRatedMoviesPage = () => {
 	const { isLoading, isError, error, data } = useQuery(
-		"cinema-movies",
-		getLatestMovies
+		"top-movie",
+		getTopRatedMovies
 	);
 	return (
 		<Container className="py-3">
@@ -34,4 +33,4 @@ const LatestMoviesPage = () => {
 	);
 };
 
-export default LatestMoviesPage;
+export default TopRatedMoviesPage;

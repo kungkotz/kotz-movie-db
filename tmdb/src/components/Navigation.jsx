@@ -18,7 +18,7 @@ const Navigation = () => {
 						<Nav.Link as={NavLink} end to="/movie/popular">
 							Popular
 						</Nav.Link>
-						<Nav.Link as={NavLink} end to="/toplist">
+						<Nav.Link as={NavLink} end to="/movie/top">
 							Toplist
 						</Nav.Link>
 						<Nav.Link as={NavLink} end to="/movie/latest">
