@@ -24,8 +24,20 @@ export const getMovieById = (id) => {
 
 // Get a single actors movies
 export const getMoviesByActorId = (id) => {
-	console.log("Got me some data? ", id);
 	return get(
 		`${axios.defaults.baseURL}/person/${id}${API_KEY}${lang}${credits}`
+	);
+};
+
+// Get latest movies
+// export const getLatestMovies = () => {
+// 	return get(
+// 		`${axios.defaults.baseURL}movie/now_playing${API_KEY}${lang}${credits}`
+// 	);
+// };
+
+export const getLatestMovies = () => {
+	return get(
+		`https://api.themoviedb.org/3/movie/now_playing?api_key=18ddaf108a92b06062a3ff474f6621da&language=en-US`
 	);
 };
