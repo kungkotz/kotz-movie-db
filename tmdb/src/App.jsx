@@ -8,10 +8,12 @@ import SingleMoviePage from "./pages/SingleMoviePage";
 import SingleActorPage from "./pages/SingleActorPage";
 import LatestMoviesPage from "./pages/LatestMoviesPage";
 import TopRatedMoviesPage from "./pages/TopRatedMoviesPage";
+import GenresPage from "./pages/GenresPage";
+import SingleGenrePage from "./pages/SingleGenrePage";
 
 function App() {
 	return (
-		<div id="App">
+		<div id="App" className="bg-dark">
 			<Navigation />
 
 			<Routes>
@@ -21,7 +23,8 @@ function App() {
 				<Route path="/people/:id" element={<SingleActorPage />} />
 				<Route path="/movie/latest" element={<LatestMoviesPage />} />
 				<Route path="/movie/top" element={<TopRatedMoviesPage />} />
-
+				<Route path="/movie/genre" element={<GenresPage />} />
+				<Route path="/movie/genre/:id" element={<SingleGenrePage />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>

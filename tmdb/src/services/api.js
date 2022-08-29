@@ -28,14 +28,6 @@ export const getMoviesByActorId = (id) => {
 		`${axios.defaults.baseURL}/person/${id}${API_KEY}${lang}${credits}`
 	);
 };
-
-// Get latest movies
-// export const getLatestMovies = () => {
-// 	return get(
-// 		`${axios.defaults.baseURL}movie/now_playing${API_KEY}${lang}${credits}`
-// 	);
-// };
-
 export const getLatestMovies = () => {
 	return get(
 		`https://api.themoviedb.org/3/movie/now_playing?api_key=18ddaf108a92b06062a3ff474f6621da&language=en-US`
@@ -46,5 +38,18 @@ export const getLatestMovies = () => {
 export const getTopRatedMovies = () => {
 	return get(
 		`https://api.themoviedb.org/3/movie/top_rated?api_key=18ddaf108a92b06062a3ff474f6621da&language=en-US`
+	);
+};
+
+// Get all genres
+export const getGenres = () => {
+	return get(
+		`https://api.themoviedb.org/3/genre/movie/list?api_key=18ddaf108a92b06062a3ff474f6621da&language=en-US&append_to_response=credits`
+	);
+};
+
+export const getMoviesByGenreId = (id) => {
+	return get(
+		`https://api.themoviedb.org/3/discover/movie?api_key=18ddaf108a92b06062a3ff474f6621da&language=en-US&sort_by=popularity.desc&include_adult=false&with_genres=${id}`
 	);
 };

@@ -17,16 +17,6 @@ const SingleActorPage = () => {
 
 	return (
 		<Container className="py-3">
-			{console.log(
-				"isLoading? ",
-				isLoading,
-				"isError? ",
-				isError,
-				"typeof? ",
-				error,
-				"got me some data? ",
-				data
-			)}
 			{isLoading && <LoadingSpinner />}
 			{isError && <p>An error occured: {error.message}</p>}
 			{data && (
