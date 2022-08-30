@@ -4,12 +4,10 @@ import Container from "react-bootstrap/esm/Container";
 import { getMovieById } from "../services/api";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/button";
 import LoadingSpinner from "../components/LoadingSpinner";
 import Card from "react-bootstrap/Card";
-import CardGroup from "react-bootstrap/CardGroup";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 
 const imgLink = "https://image.tmdb.org/t/p/w500";
 

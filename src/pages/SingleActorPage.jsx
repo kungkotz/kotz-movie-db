@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/esm/Container";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/button";
 import { getMoviesByActorId } from "../services/api";
 import LoadingSpinner from "../components/LoadingSpinner";
+import Button from "react-bootstrap/Button";
 
 const imgLink = "https://image.tmdb.org/t/p/w500";
 

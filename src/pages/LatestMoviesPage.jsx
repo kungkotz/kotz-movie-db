@@ -6,9 +6,6 @@ import Container from "react-bootstrap/Container";
 import CardGroup from "react-bootstrap/CardGroup";
 import LoadingSpinner from "../components/LoadingSpinner";
 import MovieCard from "../components/MovieCard";
-import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/button";
-import { Link } from "react-router-dom";
 
 const imgLink = "https://image.tmdb.org/t/p/w500";
 

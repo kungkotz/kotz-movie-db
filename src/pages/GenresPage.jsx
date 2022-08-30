@@ -1,7 +1,5 @@
 import React from "react";
 import { getGenres } from "../services/api";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/button";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import { useQuery } from "react-query";
