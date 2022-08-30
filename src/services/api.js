@@ -51,8 +51,8 @@ export const getGenres = () => {
 	);
 };
 
-export const getMoviesByGenreId = (id, page) => {
+export const getMoviesByGenreId = (id, current_page) => {
 	return get(
-		`${axios.defaults.baseURL}/discover/movie?api_key=${API_KEY}&${lang}&${adultFalse}&with_genres=${id}&page=${page}`
+		`${axios.defaults.baseURL}/discover/movie?api_key=${API_KEY}&${lang}&${adultFalse}&with_genres=${id}&page=${current_page}`
 	);
 };
