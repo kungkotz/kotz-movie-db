@@ -8,8 +8,7 @@ const Navigation = () => {
 		<Navbar bg="dark" variant="dark" expand="md">
 			<Container>
 				<Navbar.Brand as={Link} to="/">
-					{" "}
-					Kotz Movie Database
+					<h1>Kotz Movie Database</h1>
 				</Navbar.Brand>
 
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { getMoviesByGenreId } from "../services/api";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
@@ -19,7 +18,6 @@ const SingleGenrePage = () => {
 
 	return (
 		<Container className="py-3">
-			<h1 className="text-center">Popular Movies</h1>
 			{isLoading && <LoadingSpinner />}
 			{isError && <p>An error occured: {error.message}</p>}
 			{data && (

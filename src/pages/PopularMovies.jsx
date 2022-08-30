@@ -1,11 +1,8 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-
 import { getPopularMovies } from "../services/api";
 import { useQuery } from "react-query";
-
 import LoadingSpinner from "../components/LoadingSpinner";
-
 import CardGroup from "react-bootstrap/CardGroup";
 import MovieCard from "../components/MovieCard";
 

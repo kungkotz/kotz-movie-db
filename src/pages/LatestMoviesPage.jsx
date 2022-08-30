@@ -4,7 +4,6 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import CardGroup from "react-bootstrap/CardGroup";
-import Card from "react-bootstrap/Card";
 import LoadingSpinner from "../components/LoadingSpinner";
 import MovieCard from "../components/MovieCard";
 import Row from "react-bootstrap/Row";
