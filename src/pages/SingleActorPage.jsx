@@ -34,12 +34,14 @@ const SingleActorPage = () => {
 					<h2 className="text-white text-center mt-5">Biography</h2>
 					<Card className="text-white bg-dark border-0">
 						<Card.Body>
-							<Card.Text className="">{data.biography}</Card.Text>
+							<Card.Text className="text-center">{data.biography}</Card.Text>
 						</Card.Body>
 					</Card>
 
-					<h2 className="text-center">Actors</h2>
 					<br></br>
+					<h2 className="text-white text-center m-5">
+						More movies starring {data.name}
+					</h2>
 					<Row xs={1} md={4}>
 						{data.credits.cast.map((movie) => (
 							<>
