@@ -14,7 +14,7 @@ const TopRatedMoviesPage = () => {
 		getTopRatedMovies
 	);
 	return (
-		<Container className="py-3">
+		<Container className="py-3 bg-dark">
 			<h1 className="text-center">Popular Movies</h1>
 			{isLoading && <LoadingSpinner />}
 			{isError && <p>An error occured: {error.message}</p>}

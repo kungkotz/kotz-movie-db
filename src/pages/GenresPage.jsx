@@ -5,9 +5,11 @@ import Container from "react-bootstrap/Container";
 import { useQuery } from "react-query";
 import LoadingSpinner from "../components/LoadingSpinner";
 import ListGroup from "react-bootstrap/ListGroup";
+import Button from "react-bootstrap/Button";
 
 const GenresPage = () => {
 	const { isLoading, isError, error, data } = useQuery("genres", getGenres);
+
 	return (
 		<Container className="py-3 bg-dark">
 			<h1 className="text-center">Popular Movies</h1>
@@ -16,14 +18,15 @@ const GenresPage = () => {
 			<ListGroup className="d-flex">
 				{data &&
 					data.genres.map((genre) => (
-						<ListGroup.Item
+						<Button
 							as={Link}
 							to={`${genre.id}`}
 							key={genre.id}
-							className="overflow-auto movies-overflow text-center"
+							className="movies-overflow text-center bg-dark  text-white mx-auto"
+							variant="danger"
 						>
 							{genre.name}
-						</ListGroup.Item>
+						</Button>
 					))}
 			</ListGroup>
 		</Container>

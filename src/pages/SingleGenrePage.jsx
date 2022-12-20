@@ -1,5 +1,6 @@
 import React from "react";
 import { getMoviesByGenreId } from "../services/api";
+
 import { useParams, useSearchParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import Container from "react-bootstrap/Container";
@@ -25,6 +26,7 @@ const SingleGenrePage = () => {
 		<Container className="py-3">
 			{isLoading && <LoadingSpinner />}
 			{isError && <p>An error occured: {error.message}</p>}
+
 			{data && (
 				<CardGroup>
 					{data &&
@@ -36,8 +38,9 @@ const SingleGenrePage = () => {
 			{data && (
 				<div className="pagination d-flex justify-content-between align-items-center mt-4">
 					<Button
+						disabled={page <= 1}
 						onClick={() => setSearchParams({ page: page - 1 })}
-						variant="primary"
+						variant="danger"
 					>
 						Previous Page
 					</Button>
@@ -46,7 +49,7 @@ const SingleGenrePage = () => {
 					</span>
 					<Button
 						onClick={() => setSearchParams({ page: page + 1 })}
-						variant="primary"
+						variant="danger"
 					>
 						Next Page
 					</Button>
