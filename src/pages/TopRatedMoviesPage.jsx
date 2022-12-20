@@ -15,7 +15,8 @@ const TopRatedMoviesPage = () => {
 	);
 	return (
 		<Container className="py-3 bg-dark">
-			<h1 className="text-center">Popular Movies</h1>
+			<h1 className="text-center text-white">Top Rated Movies</h1>
+			<br />
 			{isLoading && <LoadingSpinner />}
 			{isError && <p>An error occured: {error.message}</p>}
 			<CardGroup>

@@ -17,7 +17,8 @@ const LatestMoviesPage = () => {
 	);
 	return (
 		<Container className="py-3">
-			<h1 className="text-center">Popular Movies</h1>
+			<h1 className="text-center text-white">In Cinema Now</h1>
+			<br />
 			{isLoading && <LoadingSpinner />}
 			{isError && <p>An error occured: {error.message}</p>}
 			<CardGroup>
